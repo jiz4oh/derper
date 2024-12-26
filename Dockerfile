@@ -1,3 +1,5 @@
+FROM golang:latest AS builder
+
 WORKDIR /app
 
 ADD tailscale /app/tailscale
