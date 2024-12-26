@@ -54,7 +54,6 @@ jobs:
           push: true
           tags: |
             ghcr.io/jiz4oh/derper:latest
-            name: ci
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache-new
 
