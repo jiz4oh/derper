@@ -10,7 +10,7 @@ RUN cd /app/tailscale/cmd/derper && \
     cd /app && \
     rm -rf /app/tailscale
 
-FROM debian:bullseye
+FROM debian:bookworm
 WORKDIR /app
 
 # ========= CONFIG =========
@@ -23,11 +23,11 @@ ENV DERP_STUN true
 ENV DERP_VERIFY_CLIENTS false
 # ==========================
 
-RUN cp /etc/apt/sources.list /etc/apt/sources.list.bak && \
-    sed -i 's|deb.debian.org|mirrors.aliyun.com/|g' /etc/apt/sources.list
+# RUN cp /etc/apt/sources.list /etc/apt/sources.list.bak && \
+#     sed -i 's|deb.debian.org|mirrors.aliyun.com/|g' /etc/apt/sources.list
 # apt
-RUN apt-get update && \
-    apt-get install -y openssl curl
+RUN apt-get update
+RUN apt-get install -y openssl curl
 
 COPY build_cert.sh /app/
 COPY --from=builder /app/derper /app/derper
