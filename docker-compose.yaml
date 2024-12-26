@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  derper:
+    build:
+      context: .
+    restart: unless-stopped
+    environment:
+      - DERP_VERIFY_CLIENTS=false
+    ports:
+      - 443:443/tcp
+      - 3478:3478/udp
+    volumes:
+      - /var/run/tailscale:/var/run/tailscale
+    container_name: derper
+    image: ghcr.io/jiz4oh/derper
+    network_mode: bridge
