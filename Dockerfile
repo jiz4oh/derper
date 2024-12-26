@@ -30,7 +30,8 @@ RUN apt-get update
 RUN apt-get install -y openssl curl
 
 COPY build_cert.sh /app/
+COPY entrypoint.sh /app/
 COPY --from=builder /app/derper /app/derper
 
 # build self-signed certs && start derper
-ENTRYPOINT entrypoint.sh
+ENTRYPOINT /app/entrypoint.sh
