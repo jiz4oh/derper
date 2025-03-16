@@ -8,4 +8,5 @@
 --stun=$DERP_STUN  \
 --a=$DERP_ADDR \
 --http-port=$DERP_HTTP_PORT \
---verify-clients=$DERP_VERIFY_CLIENTS
+--verify-clients=$DERP_VERIFY_CLIENTS \
+--home=$DERP_HOME
