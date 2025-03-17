@@ -17,14 +17,11 @@ add
 	"Name": "custom",
 	"RegionID": 900,
 	"HostName": "YOU_OWN_HOST,CAN BE A DOMAIN",
-	"CertName": "sha256-raw:YOU_OWN_CERT_KEY",
-    // "InsecureForTests": true, // no longer needed
+    "InsecureForTests": true
 }
 ```
 
 in `https://login.tailscale.com/admin/acls/file`
-
-the `YOU_OWN_CERT_KEY` can be checked in docker logs by `docker logs -f derper`
 
 ## Credits
 
