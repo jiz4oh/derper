@@ -12,6 +12,7 @@ services:
       - 3478:3478/udp
     volumes:
       - /var/run/tailscale:/var/run/tailscale
+      - ./certs:/app/certs
     container_name: derper
     image: ghcr.io/jiz4oh/derper
     network_mode: bridge
