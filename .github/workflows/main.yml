@@ -1,6 +1,8 @@
 name: Disable Checking ServerName
 
 on:
+  schedule:
+  - cron: "33 2 * * *"
   workflow_dispatch:
   push:
     branches:
